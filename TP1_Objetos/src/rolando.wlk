@@ -45,7 +45,7 @@ object rolando{
    
    method habilidadLuchaAportadaPorArtefactos(){
    	
-   	return artefactos.map({unArtefacto => unArtefacto.unidadesDeLucha()}).sum()
+   	return artefactos.sum({unArtefacto => unArtefacto.unidadesDeLucha()})
    }
    
    method agregarArtefacto(unArtefacto){
