@@ -13,6 +13,10 @@ object espectroMalefico{
 		return poder > 15
 	}
 	
+	method poder(){
+	
+	       return poder
+	}
 }
 
 object hechizoBasico{
