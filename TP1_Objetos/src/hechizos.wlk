@@ -17,6 +17,11 @@ object espectroMalefico{
 	
 	       return poder
 	}
+	
+	method unidadesDeLuchaQueAporta(duenio){
+		
+		return self.poder()
+	}
 }
 
 object hechizoBasico{
@@ -31,5 +36,10 @@ object hechizoBasico{
 	method esPoderoso(){
 		
 		return false
+	}
+	
+	method unidadesDeLuchaQueAporta(duenio){
+		
+		return self.poder()
 	}
 }
