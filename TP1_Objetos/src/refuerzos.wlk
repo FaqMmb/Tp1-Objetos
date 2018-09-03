@@ -8,7 +8,3 @@ object bendicion{
 	method unidadesDeLuchaQueAporta(duenio) = duenio.nivelDeHechiceria()
 }
 
-object hechizo{
-	
-	method unidadesDeLuchaQueAporta(duenio) = 
-}
