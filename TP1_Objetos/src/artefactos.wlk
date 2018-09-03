@@ -50,7 +50,7 @@ object mascaraOscura{
 object armadura{
 	
 	var duenio
-	var refuerzo 
+	var property refuerzo 
 	
 	method unidadesDeLucha(){
 		
