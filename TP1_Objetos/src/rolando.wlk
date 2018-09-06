@@ -66,6 +66,12 @@ object rolando{
    
    }
    
+   method puntosDelMejorArtefacto(){// que pasa si esta vacia?
+   	
+   	return artefactos.max({unArtefacto => unArtefacto.unidadesDeLucha()})
+   	
+   }
+   
    
 
 }

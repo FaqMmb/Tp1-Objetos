@@ -50,7 +50,7 @@ object mascaraOscura{
 object armadura{
 	
 	var duenio
-	var property refuerzo 
+	var property refuerzo = ningunRefuerzo
 	
 	method unidadesDeLucha(){
 		
@@ -61,6 +61,23 @@ object armadura{
 		
 		duenio = unDuenio
 	}
+	
+}
+
+object espejoFantastico{
+	
+	var duenio
+	
+	method unidadesDeLucha(){
+		
+		return duenio.puntosDelMejorArtefacto()
+	}
+	
+	method duenio(unDuenio){
+		
+		duenio = unDuenio
+	}
+	
 	
 }
 

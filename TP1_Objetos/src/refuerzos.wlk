@@ -12,3 +12,5 @@ object ningunRefuerzo{
 	
 	method unidadesDeLuchaQueAporta(duenio) = 0
 }
+
+
