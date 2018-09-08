@@ -5,17 +5,14 @@ object rolando{
 	
 	var property fuerzaOscura = 5
 	var hechizoPreferido = espectroMalefico
-	var artefactos = [espadaDelDestino,collarDivino,mascaraOscura]
+	var artefactos = [espadaDelDestino,collarDivino,mascaraOscura,armadura,espejoFantastico]
 	var valorBase = 1
 	
-
-    // nivelHechiceria como variable? o se puede dejar como resultado de este metodo
     method nivelHechiceria(){
 	
 	    return (3 * hechizoPreferido.poder()) + fuerzaOscura
 } 
 
-   // que nombre usar: este o hechizoPreferido(respetando la standarizacion del setter)
    method cambiarHechizoPreferido(unHechizo){
    	
    	  hechizoPreferido = unHechizo
@@ -71,6 +68,13 @@ object rolando{
    	return artefactos.max({unArtefacto => unArtefacto.unidadesDeLucha()})
    	
    }
+   
+   method estaCargado(){
+   	
+   	 return artefactos.length() > 5
+   }
+   
+   
    
    
 
