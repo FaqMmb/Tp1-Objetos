@@ -1,10 +1,11 @@
 //los artefactos tendrian que tener una variable que indique el duenio del artefacto, asi de esta forma se pueden hacer los calculos cuando se necesite saber o como se podria hacer
 
 import refuerzos.*
+import rolando.*
 
 object espadaDelDestino{
 	
-	var duenio
+	var duenio = rolando
 	method unidadesDeLucha(){
 		
 		 return 3
@@ -18,7 +19,7 @@ object espadaDelDestino{
 
 object collarDivino{
 	
-	var duenio
+	var duenio = rolando
 	var cantidadDePerlas = 5
 	
 	method unidadesDeLucha(){
@@ -34,7 +35,7 @@ object collarDivino{
 
 object mascaraOscura{
 	
-	var duenio
+	var duenio = rolando
 	method unidadesDeLucha(){
 		
 		return 4.max(2/duenio.fuerzaOscura())
