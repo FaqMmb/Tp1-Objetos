@@ -1,10 +1,45 @@
+import rolando.*
+import hechizos.*
 
-describe "group of tests" {
+describe "tests cuando rolando tiene como hechizo preferido a espectroMalefico y el nombre del hechizo espectroMalefico es \"espectro malefico\"" {
 
-	test "testX" {
+	test "rolando debe tener nivelHechiceria de 56 con la configuracion inicial" {
 
-		assert.that(true)
+		assert.equals(56,rolando.nivelHechiceria())
 
 	}
-}
-
+	
+	test "cuando se cambia el nombre de espectroMalefico a \"espectro superrecontramalefico muajajaja\" el nivelHechiceria es 125" {
+		
+		rolando.hechizoPreferido().cambiarNombre("espectro superrecontramalefico muajajaja")
+		assert.equals(125,rolando.nivelHechiceria())
+		
+	}
+	
+	test "cuando se cambia el hechizoPreferido de rolando a hechizoBasico su nivelHechiceria es 35"{
+		
+		rolando.cambiarHechizoPreferido(hechizoBasico)
+		assert.equals(35,rolando.nivelHechiceria())
+	}
+	
+	test "cuando ocurre un eclipse, el nivelHechiceria de rolando es 61 "{
+		
+		rolando.eclipse()
+		assert.equals(61,rolando.nivelHechiceria())
+	}
+	
+	test "el hechizo espectroMalefico es poderoso"{
+		
+		assert.that(espectroMalefico.esPoderoso())
+	}
+	
+	test "cuando se cambia el nombre del hechizo EspectroMalefico a \"pepe\" no es poderoso "{
+		
+		espectroMalefico.cambiarNombre("pepe")
+		assert.notThat(espectroMalefico.esPoderoso())
+	}
+	
+	test "el hechizo basico no es poderoso"{
+		
+		assert.notThat(hechizoBasico.esPoderoso())
+	}
