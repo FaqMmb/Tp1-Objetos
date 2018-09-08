@@ -1,7 +1,6 @@
 object espectroMalefico{
 	
 	var nombre = "espectro malefico"
-	var poder = nombre.length()
 	
 	method cambiarNombre(unNombre){
 		
@@ -10,12 +9,12 @@ object espectroMalefico{
 	
 	method esPoderoso(){
 		
-		return poder > 15
+		return self.poder() > 15
 	}
 	
 	method poder(){
 	
-	       return poder
+	       return nombre.length()
 	}
 	
 	method unidadesDeLuchaQueAporta(duenio){
