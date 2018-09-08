@@ -3,7 +3,7 @@ import artefactos.*
 
 object rolando{
 	
-	var fuerzaOscura = 5
+	var property fuerzaOscura = 5
 	var hechizoPreferido = espectroMalefico
 	var artefactos = [espadaDelDestino,collarDivino,mascaraOscura]
 	var valorBase = 1

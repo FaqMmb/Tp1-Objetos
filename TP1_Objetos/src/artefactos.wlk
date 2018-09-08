@@ -20,7 +20,7 @@ object espadaDelDestino{
 object collarDivino{
 	
 	var duenio = rolando
-	var cantidadDePerlas = 5
+	var property cantidadDePerlas = 5
 	
 	method unidadesDeLucha(){
 		
@@ -38,7 +38,7 @@ object mascaraOscura{
 	var duenio = rolando
 	method unidadesDeLucha(){
 		
-		return 4.max(2/duenio.fuerzaOscura())
+		return 4.max(duenio.fuerzaOscura()/2)
 	}
 	
 	method duenio(unDuenio){

@@ -1,0 +1,46 @@
+import rolando.*
+import artefactos.*
+
+describe "tests en donde se agregan a la configuracion inicial (Punto 1) que rolando tenga como artefactos a: 
+espadaDelDestino, collarDivino, mascaraOscura y la cantidad de perlas del collarDivino es 5" {
+
+	test "cuando se eliminan todos los artefactos, la habilidadDeLucha de rolando es 1 (valor base)" {
+
+		rolando.removerArtefacto(espadaDelDestino)
+		rolando.removerArtefacto(collarDivino)
+		rolando.removerArtefacto(mascaraOscura)
+		assert.equals(1,rolando.habilidadParaLaLucha())
+		
+	}
+	
+	test "con la configuracion actual, la habilidadDeLucha de rolando es 13"{
+		
+		assert.equals(13,rolando.habilidadParaLaLucha())
+	}
+	
+	test "cuando se cambia la cantidadDePerlas del collarDivino a 3, la habilidadDeLucha de rolando es 11" {
+		
+		collarDivino.cantidadDePerlas(3)
+		assert.equals(11,rolando.habilidadParaLaLucha())
+	}
+	
+	test "cuando se cambia el valorBase a 8 de rolando, su habilidadDeLucha es 20" {
+		rolando.valorBase(8)
+		assert.equals(20,rolando.habilidadParaLaLucha())
+		
+	}
+	
+	test "cuando ocurre un eclipse, el valorDeLucha de la mascaraOscura es 5" {
+		
+		rolando.eclipse()
+		assert.equals(5,mascaraOscura.unidadesDeLucha())
+	}
+	
+	test "cuando se elimina a la mascaraOscura de los artefactos de rolando, su habilidadDeLucha es 9"{
+		
+		rolando.removerArtefacto(mascaraOscura)
+		assert.equals(9,rolando.habilidadParaLaLucha())
+	}
+	
+	
+}
