@@ -5,7 +5,7 @@ object rolando{
 	
 	var fuerzaOscura = 5
 	var hechizoPreferido = espectroMalefico
-	var artefactos = []
+	var artefactos = [espadaDelDestino,collarDivino,mascaraOscura]
 	var valorBase = 1
 	
 
