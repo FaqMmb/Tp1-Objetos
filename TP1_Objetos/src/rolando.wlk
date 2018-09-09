@@ -63,18 +63,29 @@ object rolando{
    
    }
    
-   method puntosDelMejorArtefacto(){// que pasa si esta vacia?
+   method puntosDelMejorArtefacto(){
    	
-   	return artefactos.max({unArtefacto => unArtefacto.unidadesDeLucha()})
    	
-   }
+   	return self.mejorArtefacto().unidadesDeLucha()
+   	
+   	}
    
    method estaCargado(){
    	
    	 return artefactos.length() >= 5
    }
    
+   method mejorArtefacto(){
+   	
+     return self.artefactosSinEspejo().max({unArtefacto => unArtefacto.unidadesDeLucha()}) // no me convence, otra forma sacar el espejo?
+   }
    
+   method artefactosSinEspejo(){
+   	
+   	  return artefactos.filter({unArtefacto => !unArtefacto.equals(espejoFantastico)})
+   
+   
+   }
    
    
 
