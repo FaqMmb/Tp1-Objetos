@@ -1,4 +1,3 @@
-//los artefactos tendrian que tener una variable que indique el duenio del artefacto, asi de esta forma se pueden hacer los calculos cuando se necesite saber o como se podria hacer
 
 import refuerzos.*
 import rolando.*
