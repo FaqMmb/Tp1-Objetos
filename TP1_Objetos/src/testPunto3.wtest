@@ -1,0 +1,66 @@
+import rolando.*
+import artefactos.*
+import refuerzos.*
+import hechizos.*
+
+describe "tests que, sumado a la configuracion del test1 y test2, rolando tambien tiene entre sus artefactos una armadura sin refuerzo y el espejoFantastico" {
+
+	test "me dice si rolando esta cargado" {
+
+		assert.that(rolando.estaCargado())
+
+	}
+	
+	test "cuando se remueve la armadura de las pertenencias de rolando, deja de estar cargado"{
+		
+		rolando.removerArtefacto(armadura)
+		assert.notThat(rolando.estaCargado())
+	}
+	
+	test "rolando, con la configuracio actual, tiene 20 puntos de habilidad"{
+		
+		assert.equals(20,rolando.habilidadParaLaLucha())
+	}
+	
+	test "teniendo como refuerzo a la bendicion en la armadura, esta aporta 58 unidadesDeLucha"{
+		
+		armadura.refuerzo(bendicion)
+		assert.equals(58,armadura.unidadesDeLucha())
+	}
+	
+	test "teniendo como refuerzo a la cota de malla en la armadura, esta aporta 3 unidadesDeLucha"{
+		
+		armadura.refuerzo(cotaDeMalla)
+		assert.equals(3,armadura.unidadesDeLucha())
+		
+	}
+	
+	test "teniendo como refuerzo al hechizoBasico en la armadura, esta aporta 12 unidadesDeLucha"{
+		
+		armadura.refuerzo(hechizoBasico)
+		assert.equals(12,armadura.unidadesDeLucha())
+	}
+	
+	test "teniendo como refuerzo al hechizo espectroMalefico en la armadura, esta aporta 19 unidadesDeLucha"{
+		
+		armadura.refuerzo(espectroMalefico)
+		assert.equals(19,armadura.unidadesDeLucha())
+	}
+	
+	test "cuando se eliminan todos los artefactos de rolando y se deja solo el espejoFantastico, la habilidadDeLucha
+de rolando es 1"{
+	
+	   rolando.artefactos([])
+	   rolando.agregarArtefacto(espejoFantastico)
+	   assert.equals(1,rolando.habilidadParaLaLucha())
+    }
+    
+  test "cuando rolando tiene como hechizoPreferido al libroDeHechizos (este a su vez, contiene a espectroMalefico
+ y al hechizoBasico) tiene nivelHechiceria de 56"{
+ 	   rolando.hechizoPreferido(libroDeHechizos)
+ 	   assert.equals(56,rolando.nivelHechiceria())
+ 	
+ 	
+ }
+                
+}

@@ -5,7 +5,7 @@ object cotaDeMalla {
 
 object bendicion{
 	
-	method unidadesDeLuchaQueAporta(duenio) = duenio.nivelDeHechiceria()
+	method unidadesDeLuchaQueAporta(duenio) = duenio.nivelHechiceria()
 }
 
 object ningunRefuerzo{

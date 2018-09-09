@@ -4,8 +4,8 @@ import artefactos.*
 object rolando{
 	
 	var property fuerzaOscura = 5
-	var hechizoPreferido = espectroMalefico
-	var artefactos = [espadaDelDestino,collarDivino,mascaraOscura,armadura,espejoFantastico]
+	var property hechizoPreferido = espectroMalefico
+	var property artefactos = [espadaDelDestino,collarDivino,mascaraOscura,armadura,espejoFantastico]
 	var valorBase = 1
 	
     method nivelHechiceria(){
@@ -71,7 +71,7 @@ object rolando{
    
    method estaCargado(){
    	
-   	 return artefactos.length() > 5
+   	 return artefactos.length() >= 5
    }
    
    
