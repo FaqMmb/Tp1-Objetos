@@ -6,9 +6,7 @@ espadaDelDestino, collarDivino, mascaraOscura y la cantidad de perlas del collar
 
 	test "cuando se eliminan todos los artefactos, la habilidadDeLucha de rolando es 1 (valor base)" {
 
-		rolando.removerArtefacto(espadaDelDestino)
-		rolando.removerArtefacto(collarDivino)
-		rolando.removerArtefacto(mascaraOscura)
+		rolando.artefactos([])
 		assert.equals(1,rolando.habilidadParaLaLucha())
 		
 	}
