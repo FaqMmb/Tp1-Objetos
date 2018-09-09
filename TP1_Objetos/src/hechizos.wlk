@@ -1,3 +1,5 @@
+import rolando.*
+
 object espectroMalefico{
 	
 	var nombre = "espectro malefico"
@@ -41,4 +43,20 @@ object hechizoBasico{
 		
 		return self.poder()
 	}
+}
+
+object libroDeHechizos{
+	
+	var hechizos = [espectroMalefico,hechizoBasico]
+	
+	method poder(){
+		
+		return self.hechizosPoderosos().sum({unHechizo => unHechizo.poder()})
+	}
+	
+	method hechizosPoderosos(){
+		
+	 return	hechizos.filter({unHechizo => unHechizo.esPoderoso()})
+	}
+	
 }
