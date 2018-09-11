@@ -3,9 +3,9 @@ import artefactos.*
 
 object rolando{
 	
-	var property fuerzaOscura = 5
-	var property hechizoPreferido = espectroMalefico
-	var property artefactos = [espadaDelDestino,collarDivino,mascaraOscura,armadura,espejoFantastico]
+	var fuerzaOscura = 5
+	var hechizoPreferido = espectroMalefico
+	var artefactos = []
 	var valorBase = 1
 	
     method nivelHechiceria(){
@@ -85,6 +85,11 @@ object rolando{
    	  return artefactos.filter({unArtefacto => !unArtefacto.equals(espejoFantastico)})
    
    
+   }
+   
+   method fuerzaOscura(){
+   	
+   	  return fuerzaOscura
    }
    
    

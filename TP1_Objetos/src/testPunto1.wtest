@@ -1,7 +1,12 @@
 import rolando.*
 import hechizos.*
 
-describe "tests cuando rolando tiene como hechizo preferido a espectroMalefico y el nombre del hechizo espectroMalefico es \"espectro malefico\"" {
+describe "se van a realizar los tests referidos al punto 1" {
+		fixture{
+		rolando.cambiarHechizoPreferido(espectroMalefico)
+		espectroMalefico.cambiarNombre("espectro malefico")
+		
+}
 
 	test "rolando debe tener nivelHechiceria de 56 con la configuracion inicial" {
 
