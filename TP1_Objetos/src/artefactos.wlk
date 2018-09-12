@@ -3,32 +3,22 @@ import rolando.*
 
 object espadaDelDestino{
 	
-	var duenio = rolando
-	method unidadesDeLucha(){
+	method unidadesDeLucha(duenio){
 		
 		 return 3
 	}
 	
-	method duenio(unDuenio){
-		
-		duenio = unDuenio
-	}
 }
 
 object collarDivino{
 	
-	var duenio = rolando
 	var cantidadDePerlas = 5
 	
-	method unidadesDeLucha(){
+	method unidadesDeLucha(duenio){
 		
 		return cantidadDePerlas
 	}
 	
-	method duenio(unDuenio){
-		
-		duenio = unDuenio
-	}
 	
 	method cantidadDePerlas(unNumero){
 		
@@ -38,41 +28,33 @@ object collarDivino{
 
 object mascaraOscura{
 	
-	var duenio = rolando 
-	method unidadesDeLucha(){
+	method unidadesDeLucha(duenio){
 		
 		return 4.max(duenio.fuerzaOscura()/2)
 	}
 	
-	method duenio(unDuenio){
-		
-		duenio = unDuenio
-	}
 }
 
 	
 object armadura{
 	
-	var duenio = rolando
-	var property refuerzo = ningunRefuerzo
+	var refuerzo = ningunRefuerzo
 	
-	method unidadesDeLucha(){
+	method unidadesDeLucha(duenio){
 		
 		return 2 + refuerzo.unidadesDeLuchaQueAporta(duenio)
 	}
 	
-	method duenio(unDuenio){
+	method refuerzo(cual){
 		
-		duenio = unDuenio
+		refuerzo = cual
 	}
 	
 }
 
 object espejoFantastico{
 	
-	var duenio = rolando
-	
-	method unidadesDeLucha(){
+	method unidadesDeLucha(duenio){
 		
 		if(duenio.artefactos() == [self]){
 			
@@ -85,11 +67,6 @@ object espejoFantastico{
 	    }
 		    
 	}
-	
-	method duenio(unDuenio){
-		
-		duenio = unDuenio
-	} 
 }
 
 

@@ -37,26 +37,26 @@ describe "tests del punto 3)" {
 	test "teniendo como refuerzo a la bendicion en la armadura, esta aporta 58 unidadesDeLucha"{
 		
 		armadura.refuerzo(bendicion)
-		assert.equals(58,armadura.unidadesDeLucha())
+		assert.equals(58,armadura.unidadesDeLucha(rolando))
 	}
 	
 	test "teniendo como refuerzo a la cota de malla en la armadura, esta aporta 3 unidadesDeLucha"{
 		
 		armadura.refuerzo(cotaDeMalla)
-		assert.equals(3,armadura.unidadesDeLucha())
+		assert.equals(3,armadura.unidadesDeLucha(rolando))
 		
 	}
 	
 	test "teniendo como refuerzo al hechizoBasico en la armadura, esta aporta 12 unidadesDeLucha"{
 		
 		armadura.refuerzo(hechizoBasico)
-		assert.equals(12,armadura.unidadesDeLucha())
+		assert.equals(12,armadura.unidadesDeLucha(rolando))
 	}
 	
 	test "teniendo como refuerzo al hechizo espectroMalefico en la armadura, esta aporta 19 unidadesDeLucha"{
 		
 		armadura.refuerzo(espectroMalefico)
-		assert.equals(19,armadura.unidadesDeLucha())
+		assert.equals(19,armadura.unidadesDeLucha(rolando))
 	}
 	
 	test "cuando se eliminan todos los artefactos de rolando y se deja solo el espejoFantastico, la habilidadDeLucha

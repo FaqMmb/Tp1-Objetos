@@ -46,7 +46,7 @@ object rolando{
    
    method habilidadLuchaAportadaPorArtefactos(){
    	
-   	return artefactos.sum({unArtefacto => unArtefacto.unidadesDeLucha()})
+   	return artefactos.sum({unArtefacto => unArtefacto.unidadesDeLucha(self)})
    }
    
    method agregarArtefacto(unArtefacto){
@@ -70,7 +70,7 @@ object rolando{
    method puntosDelMejorArtefacto(){
    	
    	
-   	return self.mejorArtefacto().unidadesDeLucha()
+   	return self.mejorArtefacto().unidadesDeLucha(self)
    	
    	}
    
@@ -81,7 +81,7 @@ object rolando{
    
    method mejorArtefacto(){
    	
-     return self.artefactosSinEspejo().max({unArtefacto => unArtefacto.unidadesDeLucha()}) // no me convence, otra forma sacar el espejo?
+     return self.artefactosSinEspejo().max({unArtefacto => unArtefacto.unidadesDeLucha(self)}) // no me convence, otra forma sacar el espejo?
    }
    
    method artefactosSinEspejo(){
