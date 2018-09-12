@@ -38,11 +38,16 @@ object mascaraOscura{
 	
 object armadura{
 	
-	var property refuerzo = ningunRefuerzo
+	var refuerzo = ningunRefuerzo
 	
 	method unidadesDeLucha(duenio){
 		
 		return 2 + refuerzo.unidadesDeLuchaQueAporta(duenio)
+	}
+	
+	method refuerzo(){
+		
+		return refuerzo
 	}
 	
 }
