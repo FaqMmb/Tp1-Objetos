@@ -52,13 +52,11 @@ object rolando{
    method agregarArtefacto(unArtefacto){
    	
    	artefactos.add(unArtefacto)
-   	unArtefacto.duenio(self)
    }
    
    method removerArtefacto(unArtefacto){
    	
    	artefactos.remove(unArtefacto)
-   	unArtefacto.duenio(null)
    }
    
    method mejorLuchadorQueMago(){
@@ -76,7 +74,7 @@ object rolando{
    
    method estaCargado(){
    	
-   	 return artefactos.length() >= 5
+   	 return artefactos.size() >= 5
    }
    
    method mejorArtefacto(){
@@ -94,6 +92,11 @@ object rolando{
    method fuerzaOscura(){
    	
    	  return fuerzaOscura
+   }
+   
+   method artefactos(){
+   	
+   	 return artefactos
    }
    
    

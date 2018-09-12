@@ -45,15 +45,15 @@ object armadura{
 		return 2 + refuerzo.unidadesDeLuchaQueAporta(duenio)
 	}
 	
-<<<<<<< HEAD
+
 	method refuerzo(cual){
 		
 		refuerzo = cual
-=======
+}
 	method refuerzo(){
 		
 		return refuerzo
->>>>>>> 39ed53cef5b8502de5977566a0cfdd29801188d7
+
 	}
 	
 }
