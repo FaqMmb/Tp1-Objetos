@@ -1,12 +1,26 @@
 import rolando.*
 import artefactos.*
+import hechizos.*
 
-describe "tests en donde se agregan a la configuracion inicial (Punto 1) que rolando tenga como artefactos a: 
-espadaDelDestino, collarDivino, mascaraOscura y la cantidad de perlas del collarDivino es 5" {
+describe "tests referidos al punto 2" {
+	
+		fixture{
+		
+		rolando.cambiarHechizoPreferido(espectroMalefico)
+		espectroMalefico.cambiarNombre("espectro malefico")
+		rolando.agregarArtefacto(espadaDelDestino)
+		rolando.agregarArtefacto(collarDivino)
+		rolando.agregarArtefacto(mascaraOscura)
+		collarDivino.cantidadDePerlas(5)
+		
+		
+	}
 
 	test "cuando se eliminan todos los artefactos, la habilidadDeLucha de rolando es 1 (valor base)" {
 
-		rolando.artefactos([])
+		rolando.removerArtefacto(espadaDelDestino)
+		rolando.removerArtefacto(collarDivino)
+		rolando.removerArtefacto(mascaraOscura)
 		assert.equals(1,rolando.habilidadParaLaLucha())
 		
 	}

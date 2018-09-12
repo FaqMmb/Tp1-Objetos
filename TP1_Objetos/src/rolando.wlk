@@ -18,6 +18,10 @@ object rolando{
    	  hechizoPreferido = unHechizo
    }
    
+   method hechizoPreferido() {
+		return hechizoPreferido
+	}
+   
    method eclipse(){
    	
    	fuerzaOscura *= 2

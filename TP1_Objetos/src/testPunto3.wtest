@@ -3,7 +3,19 @@ import artefactos.*
 import refuerzos.*
 import hechizos.*
 
-describe "tests que, sumado a la configuracion del test1 y test2, rolando tambien tiene entre sus artefactos una armadura sin refuerzo y el espejoFantastico" {
+describe "tests del punto 3)" {
+	
+		fixture {
+		rolando.cambiarHechizoPreferido(espectroMalefico)
+		espectroMalefico.cambiarNombre("espectro malefico")
+		rolando.agregarArtefacto(espadaDelDestino)
+		rolando.agregarArtefacto(collarDivino)
+		rolando.agregarArtefacto(mascaraOscura)
+		rolando.agregarArtefacto(armadura)
+		rolando.agregarArtefacto(espejoFantastico)
+		collarDivino.cantidadDePerlas(5)
+	}
+	
 
 	test "me dice si rolando esta cargado" {
 
@@ -50,14 +62,16 @@ describe "tests que, sumado a la configuracion del test1 y test2, rolando tambie
 	test "cuando se eliminan todos los artefactos de rolando y se deja solo el espejoFantastico, la habilidadDeLucha
 de rolando es 1"{
 	
-	   rolando.artefactos([])
-	   rolando.agregarArtefacto(espejoFantastico)
+	   rolando.removerArtefacto(espadaDelDestino)
+		rolando.removerArtefacto(collarDivino)
+		rolando.removerArtefacto(mascaraOscura)
+		rolando.removerArtefacto(armadura)
 	   assert.equals(1,rolando.habilidadParaLaLucha())
     }
     
   test "cuando rolando tiene como hechizoPreferido al libroDeHechizos (este a su vez, contiene a espectroMalefico
  y al hechizoBasico) tiene nivelHechiceria de 56"{
- 	   rolando.hechizoPreferido(libroDeHechizos)
+ 	   rolando.cambiarHechizoPreferido(libroDeHechizos)
  	   assert.equals(56,rolando.nivelHechiceria())
  	
  	
