@@ -62,7 +62,7 @@ object espejoFantastico{
 	
 	method unidadesDeLucha(duenio){
 		
-		if(duenio.artefactos() == [self]){
+		if(duenio.soloTieneElEspejo()){
 			
 			return 0
 		}
