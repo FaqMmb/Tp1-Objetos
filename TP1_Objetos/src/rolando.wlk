@@ -99,6 +99,12 @@ object rolando{
    	 return artefactos
    }
    
+     method soloTieneElEspejo(){
+   	
+   	 return artefactos == [espejoFantastico]
+   }
+   
+   
    
    
    
