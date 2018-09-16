@@ -79,7 +79,7 @@ object rolando{
    
    method mejorArtefacto(){
    	
-     return self.artefactosSinEspejo().max({unArtefacto => unArtefacto.unidadesDeLucha(self)}) // no me convence, otra forma sacar el espejo?
+     return self.artefactosSinEspejo().max({unArtefacto => unArtefacto.unidadesDeLucha(self)})
    }
    
    method artefactosSinEspejo(){
