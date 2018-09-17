@@ -22,9 +22,9 @@ object rolando{
 		return hechizoPreferido
 	}
    
-   method eclipse(){
+   method recibirUnEclipse(){
    	
-   	fuerzaOscura *= 2 // abstraerlo a un objeto
+   	self.fuerzaOscura(self.fuerzaOscura() * 2)
    }
    
    method seCreePoderoso(){
@@ -94,6 +94,11 @@ object rolando{
    	  return fuerzaOscura
    }
    
+   method fuerzaOscura(unValor){
+   	
+   	fuerzaOscura = unValor
+   }
+   
    method artefactos(){
    	
    	 return artefactos
@@ -103,13 +108,14 @@ object rolando{
    	
    	 return artefactos == [espejoFantastico]
    }
-   
-   
-   
-   
-   
-
 }
 
-
+object eclipse{
+	
+	
+    method hacerUnEclipse(duenio){
+		
+		duenio.recibirUnEclipse()
+	}
+}
 
