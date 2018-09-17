@@ -24,7 +24,7 @@ object rolando{
    
    method eclipse(){
    	
-   	fuerzaOscura *= 2
+   	fuerzaOscura *= 2 // abstraerlo a un objeto
    }
    
    method seCreePoderoso(){
