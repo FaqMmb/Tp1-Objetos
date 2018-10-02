@@ -41,6 +41,11 @@ class Mascara{
 		return minimo.max((duenio.fuerzaOscura()/2 )* indiceOscuridad)
 	}
 	
+	method cambiarMinimo(unValor){
+		
+		minimo = unValor
+	}
+	
 	
 }
 
