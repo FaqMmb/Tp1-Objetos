@@ -52,7 +52,7 @@ class Mascara{
 
 
 	
-object armadura{
+class Armadura{
 	
 	var refuerzo = ningunRefuerzo
 	

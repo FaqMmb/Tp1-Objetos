@@ -1,6 +1,13 @@
-object cotaDeMalla {
+class CotaDeMalla {
 	
-	method unidadesDeLuchaQueAporta(duenio) = 1
+	const valorQueAporta
+	
+	constructor(unValorQueAporta){
+		
+		valorQueAporta = unValorQueAporta
+	}
+	
+	method unidadesDeLuchaQueAporta(duenio) = valorQueAporta
 }
 
 object bendicion{
