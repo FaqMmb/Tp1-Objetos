@@ -44,7 +44,7 @@ describe "tests referidos al punto 2" {
 	
 	test "cuando ocurre un eclipse, el valorDeLucha de la mascaraOscura es 5" {
 		
-		rolando.eclipse()
+		eclipse.hacerUnEclipse(rolando)
 		assert.equals(5,mascaraOscura.unidadesDeLucha(rolando))
 	}
 	
