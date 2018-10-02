@@ -33,11 +33,7 @@ class Personaje{
    	
    }
    
-   method valorBase(cual){
-   	
-   	valorBase = cual
-   }
-   
+
    method habilidadParaLaLucha(){
    	
    	return valorBase + self.habilidadLuchaAportadaPorArtefactos()
