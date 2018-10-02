@@ -1,82 +1,64 @@
 import Personaje.*
 
-object espectroMalefico2{
-	
-	var nombre = "espectro malefico"
-	
-	method cambiarNombre(unNombre){
-		
-		nombre = unNombre
-	}
-	
-	method esPoderoso(){
-		
-		return self.poder() > 15
-	}
-	
-	method poder(){
-	
-	       return nombre.length()
-	}
-	
-	method unidadesDeLuchaQueAporta(duenio){
-		
-		return self.poder()
-	}
-}
+class HechizoDeLogo {
 
-object hechizoBasico{
-	
-	var poder = 10
-	
-	method poder(){
-		
-		return poder
-	}
-	
-	method esPoderoso(){
-		
-		return false
-	}
-	
-	method unidadesDeLuchaQueAporta(duenio){
-		
-		return self.poder()
-	}
-}
-
-object libroDeHechizos{
-	
-	var hechizos = [espectroMalefico2,hechizoBasico]
-	
-	method poder(){
-		
-		return self.hechizosPoderosos().sum({unHechizo => unHechizo.poder()})
-	}
-	
-	method hechizosPoderosos(){
-		
-	 return	hechizos.filter({unHechizo => unHechizo.esPoderoso()})
-	}
-	
-}
-
-class HechizoDeLogo{
-	
-	const nombre
+	var nombre
 	const multiplicador
-	
-	constructor(unNombre,unMultiplicador){
-		
+
+	constructor(unNombre, unMultiplicador) {
 		nombre = unNombre
 		multiplicador = unMultiplicador
 	}
-	
-	method poder(){
-		
+
+	method poder() {
 		return nombre.size() * multiplicador
 	}
-	
-	
+
+	method esPoderoso() {
+		return self.poder() > 15
+	}
+
+	method cambiarNombre(unNombre) {
+		nombre = unNombre
+	}
+
+	method unidadesDeLuchaQueAporta(duenio) {
+		return self.poder()
+	}
+
 }
+
+
+object hechizoBasico {
+
+	var poder = 10
+
+	method poder() {
+		return poder
+	}
+
+	method esPoderoso() {
+		return false
+	}
+
+	method unidadesDeLuchaQueAporta(duenio) {
+		return self.poder()
+	}
+
+}
+
+object libroDeHechizos {
+
+	var hechizos = [ new HechizoDeLogo("espectroMalefico",1), hechizoBasico ]
+
+	method poder() {
+		return self.hechizosPoderosos().sum({ unHechizo => unHechizo.poder() })
+	}
+
+	method hechizosPoderosos() {
+		return hechizos.filter({ unHechizo => unHechizo.esPoderoso() })
+	}
+
+}
+
 
