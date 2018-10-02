@@ -6,7 +6,7 @@ class Personaje{
 	var fuerzaOscura = 5
 	var hechizoPreferido = espectroMalefico
 	var artefactos = []
-	var valorBase = 1
+	const valorBase = 3
 	
     method nivelHechiceria(){
 	

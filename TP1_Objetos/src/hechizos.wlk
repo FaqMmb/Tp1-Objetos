@@ -1,6 +1,6 @@
-import rolando.*
+import Personaje.*
 
-object espectroMalefico{
+object espectroMalefico2{
 	
 	var nombre = "espectro malefico"
 	
@@ -47,7 +47,7 @@ object hechizoBasico{
 
 object libroDeHechizos{
 	
-	var hechizos = [espectroMalefico,hechizoBasico]
+	var hechizos = [espectroMalefico2,hechizoBasico]
 	
 	method poder(){
 		
@@ -60,3 +60,23 @@ object libroDeHechizos{
 	}
 	
 }
+
+class HechizoDeLogo{
+	
+	const nombre
+	const multiplicador
+	
+	constructor(unNombre,unMultiplicador){
+		
+		nombre = unNombre
+		multiplicador = unMultiplicador
+	}
+	
+	method poder(){
+		
+		return nombre.size() * multiplicador
+	}
+	
+	
+}
+

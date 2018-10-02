@@ -4,9 +4,11 @@ import hechizos.*
 describe "se van a realizar los tests referidos al punto 1" {
 	
 	var rolando
+	var espectroMalefico
 		
 		fixture{
 		rolando = new Personaje()	
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		
