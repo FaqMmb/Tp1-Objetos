@@ -7,12 +7,14 @@ describe "tests referidos al punto 2" {
 	var rolando
 	var espectroMalefico
 	var espadaDelDestino
+	var mascaraOscura
 	
 		fixture{
 			
 		rolando = new Personaje()
 		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
 		espadaDelDestino = new Arma()
+		mascaraOscura = new Mascara(1)
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		rolando.agregarArtefacto(espadaDelDestino)

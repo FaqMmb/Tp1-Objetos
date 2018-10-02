@@ -26,14 +26,25 @@ object collarDivino{
 	}
 }
 
-object mascaraOscura{
+class Mascara{
+	
+	const indiceOscuridad
+	var minimo = 4
+	
+	constructor(unIndiceOscuridad){
+		
+		indiceOscuridad = unIndiceOscuridad
+	}
 	
 	method unidadesDeLucha(duenio){
 		
-		return 4.max(duenio.fuerzaOscura()/2)
+		return minimo.max((duenio.fuerzaOscura()/2 )* indiceOscuridad)
 	}
 	
+	
 }
+
+
 
 	
 object armadura{
@@ -74,6 +85,7 @@ object espejoFantastico{
 		    
 	}
 }
+
 
 
 
