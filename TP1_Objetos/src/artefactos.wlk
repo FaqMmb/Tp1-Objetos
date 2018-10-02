@@ -1,14 +1,14 @@
 import refuerzos.*
-import rolando.*
+import Personaje.*
 
-object espadaDelDestino{
+class Arma{
 	
 	method unidadesDeLucha(duenio){
 		
 		 return 3
 	}
-	
 }
+
 
 object collarDivino{
 	

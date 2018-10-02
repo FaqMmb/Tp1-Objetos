@@ -5,10 +5,14 @@ import hechizos.*
 describe "tests referidos al punto 2" {
 	
 	var rolando
+	var espectroMalefico
+	var espadaDelDestino
 	
 		fixture{
 			
 		rolando = new Personaje()
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
+		espadaDelDestino = new Arma()
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		rolando.agregarArtefacto(espadaDelDestino)
