@@ -1,9 +1,12 @@
-import rolando.*
+import Personaje.*
 import hechizos.*
 
 describe "se van a realizar los tests referidos al punto 1" {
+	
+	var rolando
 		
 		fixture{
+		rolando = new Personaje()	
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		

@@ -1,11 +1,14 @@
-import rolando.*
+import Personaje.*
 import artefactos.*
 import hechizos.*
 
 describe "tests referidos al punto 2" {
 	
+	var rolando
+	
 		fixture{
-		
+			
+		rolando = new Personaje()
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		rolando.agregarArtefacto(espadaDelDestino)
