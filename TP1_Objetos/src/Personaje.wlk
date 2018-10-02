@@ -1,7 +1,7 @@
 import hechizos.*
 import artefactos.*
 
-object rolando{
+class Personaje{
 	
 	var fuerzaOscura = 5
 	var hechizoPreferido = espectroMalefico
