@@ -6,7 +6,7 @@ class Personaje{
 	var fuerzaOscura = 5
 	var hechizoPreferido 
 	var artefactos = []
-	const valorBase = 3
+	var valorBase = 3
 	
     method nivelHechiceria(){
 	
@@ -93,6 +93,11 @@ class Personaje{
    method fuerzaOscura(unValor){
    	
    	fuerzaOscura = unValor
+   }
+   
+   method valorBase(unValor){
+   	
+   	valorBase = unValor
    }
    
    method artefactos(){

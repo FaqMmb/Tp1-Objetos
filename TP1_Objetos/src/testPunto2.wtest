@@ -28,7 +28,7 @@ describe "tests referidos al punto 2" {
 		rolando.removerArtefacto(espadaDelDestino)
 		rolando.removerArtefacto(collarDivino)
 		rolando.removerArtefacto(mascaraOscura)
-		assert.equals(1,rolando.habilidadParaLaLucha())
+		assert.equals(3,rolando.habilidadParaLaLucha())
 		
 	}
 	
@@ -63,5 +63,4 @@ describe "tests referidos al punto 2" {
 	
 	// tests agregados de la segunda parte
 	
-	test ""
 }
