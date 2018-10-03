@@ -6,16 +6,20 @@ import hechizos.*
 describe "tests del punto 3)" {
 	
 	var rolando
+	var espectroMalefico
+	var espadaDelDestino
+	var mascaraOscura
+	var unaArmadura
 	
 		fixture {
-		rolando = new Personaje()	
+		rolando = new Personaje()
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
+		espadaDelDestino = new Arma()
+		mascaraOscura = new Mascara(1)
+		unaArmadura = new Armadura(2)	
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
-		rolando.agregarArtefacto(espadaDelDestino)
-		rolando.agregarArtefacto(collarDivino)
-		rolando.agregarArtefacto(mascaraOscura)
-		rolando.agregarArtefacto(armadura)
-		rolando.agregarArtefacto(espejoFantastico)
+		rolando.artefactos([espadaDelDestino,collarDivino,mascaraOscura,unaArmadura,espejoFantastico])
 		collarDivino.cantidadDePerlas(5)
 	}
 	
@@ -28,38 +32,38 @@ describe "tests del punto 3)" {
 	
 	test "cuando se remueve la armadura de las pertenencias de rolando, deja de estar cargado"{
 		
-		rolando.removerArtefacto(armadura)
+		rolando.removerArtefacto(unaArmadura)
 		assert.notThat(rolando.estaCargado())
 	}
 	
 	test "rolando, con la configuracio actual, tiene 20 puntos de habilidad"{
 		
-		assert.equals(20,rolando.habilidadParaLaLucha())
+		assert.equals(22,rolando.habilidadParaLaLucha())
 	}
 	
 	test "teniendo como refuerzo a la bendicion en la armadura, esta aporta 58 unidadesDeLucha"{
 		
-		armadura.refuerzo(bendicion)
-		assert.equals(58,armadura.unidadesDeLucha(rolando))
+		unaArmadura.refuerzo(bendicion)
+		assert.equals(58,unaArmadura.unidadesDeLucha(rolando))
 	}
 	
 	test "teniendo como refuerzo a la cota de malla en la armadura, esta aporta 3 unidadesDeLucha"{
 		
-		armadura.refuerzo(cotaDeMalla)
-		assert.equals(3,armadura.unidadesDeLucha(rolando))
+		unaArmadura.refuerzo(new CotaDeMalla(1))
+		assert.equals(3,unaArmadura.unidadesDeLucha(rolando))
 		
 	}
 	
 	test "teniendo como refuerzo al hechizoBasico en la armadura, esta aporta 12 unidadesDeLucha"{
 		
-		armadura.refuerzo(hechizoBasico)
-		assert.equals(12,armadura.unidadesDeLucha(rolando))
+		unaArmadura.refuerzo(hechizoBasico)
+		assert.equals(12,unaArmadura.unidadesDeLucha(rolando))
 	}
 	
 	test "teniendo como refuerzo al hechizo espectroMalefico en la armadura, esta aporta 19 unidadesDeLucha"{
 		
-		armadura.refuerzo(espectroMalefico)
-		assert.equals(19,armadura.unidadesDeLucha(rolando))
+		unaArmadura.refuerzo(espectroMalefico)
+		assert.equals(19,unaArmadura.unidadesDeLucha(rolando))
 	}
 	
 	test "cuando se eliminan todos los artefactos de rolando y se deja solo el espejoFantastico, la habilidadDeLucha
@@ -68,13 +72,13 @@ de rolando es 1"{
 	   rolando.removerArtefacto(espadaDelDestino)
 		rolando.removerArtefacto(collarDivino)
 		rolando.removerArtefacto(mascaraOscura)
-		rolando.removerArtefacto(armadura)
-	   assert.equals(1,rolando.habilidadParaLaLucha())
+		rolando.removerArtefacto(unaArmadura)
+	   assert.equals(3,rolando.habilidadParaLaLucha())
     }
     
   test "cuando rolando tiene como hechizoPreferido al libroDeHechizos (este a su vez, contiene a espectroMalefico
  y al hechizoBasico) tiene nivelHechiceria de 56"{
- 	   rolando.cambiarHechizoPreferido(libroDeHechizos)
+ 	   rolando.cambiarHechizoPreferido(new LibroDeHechizos([hechizoBasico,espectroMalefico]))
  	   assert.equals(56,rolando.nivelHechiceria())
  	
  	
