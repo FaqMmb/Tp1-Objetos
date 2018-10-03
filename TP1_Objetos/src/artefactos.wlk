@@ -55,10 +55,16 @@ class Mascara{
 class Armadura{
 	
 	var refuerzo = ningunRefuerzo
+    const valorBase
+    
+    constructor(unValorBase){
+    	
+    	valorBase = unValorBase
+    }
 	
 	method unidadesDeLucha(duenio){
 		
-		return 2 + refuerzo.unidadesDeLuchaQueAporta(duenio)
+		return valorBase + refuerzo.unidadesDeLuchaQueAporta(duenio)
 	}
 	
 

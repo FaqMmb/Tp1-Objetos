@@ -47,9 +47,14 @@ object hechizoBasico {
 
 }
 
-object libroDeHechizos {
+class LibroDeHechizos {
 
-	var hechizos = [ new HechizoDeLogo("espectroMalefico",1), hechizoBasico ]
+	var hechizos
+	
+	constructor(unosHechizos){
+		
+		hechizos = unosHechizos
+	}
 
 	method poder() {
 		return self.hechizosPoderosos().sum({ unHechizo => unHechizo.poder() })
