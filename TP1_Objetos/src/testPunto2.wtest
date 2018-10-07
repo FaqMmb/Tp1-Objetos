@@ -30,19 +30,19 @@ describe "tests referidos al punto 2" {
 		rolando.removerArtefacto(espadaDelDestino)
 		rolando.removerArtefacto(collarDivino)
 		rolando.removerArtefacto(mascaraOscura)
-		assert.equals(3,rolando.habilidadParaLaLucha())
+		assert.equals(1,rolando.habilidadParaLaLucha())
 		
 	}
 	
 	test "con la configuracion actual, la habilidadDeLucha de rolando es 13"{
 		
-		assert.equals(15,rolando.habilidadParaLaLucha())
+		assert.equals(13,rolando.habilidadParaLaLucha())
 	}
 	
 	test "cuando se cambia la cantidadDePerlas del collarDivino a 3, la habilidadDeLucha de rolando es 11" {
 		
 		collarDivino.cantidadDePerlas(3)
-		assert.equals(13,rolando.habilidadParaLaLucha())
+		assert.equals(11,rolando.habilidadParaLaLucha())
 	}
 	
 	test "cuando se cambia el valorBase a 8 de rolando, su habilidadDeLucha es 20" {
@@ -60,7 +60,7 @@ describe "tests referidos al punto 2" {
 	test "cuando se elimina a la mascaraOscura de los artefactos de rolando, su habilidadDeLucha es 9"{
 		
 		rolando.removerArtefacto(mascaraOscura)
-		assert.equals(11,rolando.habilidadParaLaLucha())
+		assert.equals(9,rolando.habilidadParaLaLucha())
 	}
 	
 	// tests agregados de la segunda parte

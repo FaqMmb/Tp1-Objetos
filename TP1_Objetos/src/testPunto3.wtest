@@ -38,7 +38,7 @@ describe "tests del punto 3)" {
 	
 	test "rolando, con la configuracio actual, tiene 20 puntos de habilidad"{
 		
-		assert.equals(22,rolando.habilidadParaLaLucha())
+		assert.equals(20,rolando.habilidadParaLaLucha())
 	}
 	
 	test "teniendo como refuerzo a la bendicion en la armadura, esta aporta 58 unidadesDeLucha"{
@@ -73,7 +73,7 @@ de rolando es 1"{
 		rolando.removerArtefacto(collarDivino)
 		rolando.removerArtefacto(mascaraOscura)
 		rolando.removerArtefacto(unaArmadura)
-	   assert.equals(3,rolando.habilidadParaLaLucha())
+	   assert.equals(1,rolando.habilidadParaLaLucha())
     }
     
   test "cuando rolando tiene como hechizoPreferido al libroDeHechizos (este a su vez, contiene a espectroMalefico
