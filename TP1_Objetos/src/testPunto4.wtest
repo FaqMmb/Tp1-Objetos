@@ -1,0 +1,104 @@
+import Personaje.*
+import artefactos.*
+import refuerzos.*
+import hechizos.*
+
+
+describe "group of tests" {
+	
+	var xenia
+	var thor
+	var loki 
+	var alacachulaHechizo
+	
+	fixture{
+		
+		alacachulaHechizo = new HechizoDeLogo("alacachula cachicomula",1)
+		
+		xenia = new Personaje()
+		xenia.hechizoPreferido(alacachulaHechizo)
+		
+		thor = new Personaje()
+		thor.hechizoPreferido(hechizoBasico)
+		
+		loki = new Personaje()
+		loki.hechizoPreferido(hechizoBasico)
+		loki.monedas(5)
+		
+		
+	}
+
+	test "el precio de lista de un hechizoDeLogo alacachulaCachicomula es 22" {
+
+		assert.equals(22,alacachulaHechizo.precioDeLista())
+
+	}
+	
+	test "cuando xenia canjea su hechizo por un hechizoBasico, se queda con las mismas monedas que tenia, es decir, con 100"{
+		
+		xenia.canjearHechizo(hechizoBasico)
+		assert.equals(100,xenia.monedas())
+	}
+	
+	test "cuando thor canjea su hechizo por el de alacachula, le quedan 83 monedas"{
+		
+		thor.canjearHechizo(alacachulaHechizo)
+		assert.equals(83,thor.monedas())
+	}
+	
+	test "cuando thor canjea dos veces su hechizo por el hechizoBasico, le quedan 90 monedas"{
+		
+		thor.canjearHechizo(hechizoBasico)
+		thor.canjearHechizo(hechizoBasico)
+		assert.equals(90,thor.monedas())
+	}
+	
+	test "cuando loki intenta canjear su hechizo por el de alacachula, no puede hacerlo porque no tiene suficiente monedas"{
+		
+		assert.notThat(loki.puedeRealizarTransaccion(alacachulaHechizo))
+	}
+	
+	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), a xenia le deben quedar 70,5 monedas "{
+		
+		
+		xenia.comprarArtefacto(new Arma())
+		xenia.comprarArtefacto(collarDivino)
+		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo))
+		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5)))
+		assert.equals(70.5,xenia.monedas())
+		
+	}
+	
+	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), xenia tiene 4 artefactos " {
+		
+		xenia.comprarArtefacto(new Arma())
+		xenia.comprarArtefacto(collarDivino)
+		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo))
+		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5)))
+		assert.equals(4,xenia.cantidadDeArtefactos())
+		
+		
+	}
+	
+	test "cuando thor compra una armadura con bendicion como refuerzo, y una armadura reforzada con el hechizo alacachula, a thor le quedan 74 monedas"{
+		
+		thor.comprarArtefacto(new Armadura(2,bendicion))
+		thor.comprarArtefacto(new Armadura(2,alacachulaHechizo))
+		assert.equals(74,thor.monedas())
+	}
+	
+	test "cuando loki quiere comprar un espejo, no puede hacerlo porque no le alcanza" {
+		
+		assert.notThat(loki.puedeRealizarTransaccion(espejoFantastico))
+	}
+	
+	test "cuando xenia canjea su hechizo por un libroDeHechizos que contiene el hechizo alacachula y el hechizoBasico, le quedan 69 monedas"{
+		
+		xenia.canjearHechizo(new LibroDeHechizos([alacachulaHechizo,hechizoBasico]))
+		assert.equals(69,xenia.monedas())
+	}
+}
+
+
+
+
