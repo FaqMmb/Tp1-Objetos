@@ -1,12 +1,14 @@
 import hechizos.*
 import artefactos.*
+import Feria.*
 
 class Personaje{
 	
 	var fuerzaOscura = 5
-	var hechizoPreferido 
+	var property hechizoPreferido 
 	var property artefactos = []
 	var valorBase = 1
+	var property monedas = 100
 	
     method nivelHechiceria(){
 	
@@ -17,10 +19,6 @@ class Personaje{
    	
    	  hechizoPreferido = unHechizo
    }
-   
-   method hechizoPreferido() {
-		return hechizoPreferido
-	}
    
    method recibirUnEclipse(){
    	
@@ -109,6 +107,47 @@ class Personaje{
    	
    	 return artefactos == [espejoFantastico]
    }
+   
+   //logica del punto 4)
+   
+     method puedeRealizarTransaccion(unArtefactoOHechizo){
+  	
+  	return (self.monedas() - unArtefactoOHechizo.precioDeLista() ) > 0
+  	
+  }
+  
+    method pagar(deudaAPagar){
+  	
+  	self.monedas(self.monedas() - deudaAPagar)
+  	
+  }
+  
+   method precioDeSuHechizoPreferido() = self.hechizoPreferido().precioDeLista()
+  
+  method recibirHechizo(unHechizo){
+  	
+  	self.hechizoPreferido(unHechizo)
+  	
+  	}
+  	
+  method canjearHechizo(unHechizo){
+  	
+  	feriaDeHechizos.realizarTransaccion(self,unHechizo)
+  }
+  
+     method comprarArtefacto(unArtefacto){
+   	
+   	feriaDeArmas.realizarTransaccion(self,unArtefacto)
+   } 
+   
+   method recibirArtefacto(unArtefacto){
+   	
+   	self.agregarArtefacto(unArtefacto)
+   }
+   
+   method cantidadDeArtefactos() = self.artefactos().size()
+  
+  	
 }
 
 object eclipse{
