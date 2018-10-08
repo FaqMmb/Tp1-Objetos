@@ -16,7 +16,7 @@ describe "tests del punto 3)" {
 		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
 		espadaDelDestino = new Arma()
 		mascaraOscura = new Mascara(1)
-		unaArmadura = new Armadura(2)	
+		unaArmadura = new Armadura(2,ningunRefuerzo)	
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		rolando.artefactos([espadaDelDestino,collarDivino,mascaraOscura,unaArmadura,espejoFantastico])

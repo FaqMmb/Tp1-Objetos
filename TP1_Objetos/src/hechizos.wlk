@@ -1,6 +1,15 @@
 import Personaje.*
 
-class HechizoDeLogo {
+class Hechizo{
+	
+	method costoAgregado(unaArmadura) = unaArmadura.valorBase() + self.precioDeLista()
+	
+	method precioDeLista()
+	
+}
+
+
+class HechizoDeLogo inherits Hechizo {
 
 	var nombre
 	const multiplicador
@@ -25,11 +34,13 @@ class HechizoDeLogo {
 	method unidadesDeLuchaQueAporta(duenio) {
 		return self.poder()
 	}
+	
+	override method precioDeLista() = self.poder()
 
 }
 
 
-object hechizoBasico {
+object hechizoBasico inherits Hechizo {
 
 	var poder = 10
 
@@ -44,10 +55,12 @@ object hechizoBasico {
 	method unidadesDeLuchaQueAporta(duenio) {
 		return self.poder()
 	}
+	
+	override method precioDeLista() = 10
 
 }
 
-class LibroDeHechizos {
+class LibroDeHechizos inherits Hechizo {
 
 	var hechizos
 	
@@ -55,6 +68,8 @@ class LibroDeHechizos {
 		
 		hechizos = unosHechizos
 	}
+	
+	method hechizos() = hechizos
 
 	method poder() {
 		return self.hechizosPoderosos().sum({ unHechizo => unHechizo.poder() })
@@ -63,6 +78,12 @@ class LibroDeHechizos {
 	method hechizosPoderosos() {
 		return hechizos.filter({ unHechizo => unHechizo.esPoderoso() })
 	}
+	
+	override method precioDeLista() = (10 * self.cantidadDeHechizos()) + self.poder()
+
+	method cantidadDeHechizos() = self.hechizos().size()
+	
+	
 
 }
 

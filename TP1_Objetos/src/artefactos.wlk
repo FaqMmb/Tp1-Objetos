@@ -3,27 +3,26 @@ import Personaje.*
 
 class Arma{
 	
-	method unidadesDeLucha(duenio){
-		
-		 return 3
-	}
+	const poder = 3
+	
+	method poder() = poder
+	
+	method unidadesDeLucha(duenio) = self.poder()
+	
+	method precioDeLista() = 5 * self.poder()
 }
 
 
 object collarDivino{
 	
-	var cantidadDePerlas = 5
+	var property cantidadDePerlas = 5
 	
 	method unidadesDeLucha(duenio){
 		
-		return cantidadDePerlas
+		return self.cantidadDePerlas()
 	}
 	
-	
-	method cantidadDePerlas(unNumero){
-		
-		cantidadDePerlas = unNumero
-	}
+	method precioDeLista() = 2 * self.cantidadDePerlas()
 }
 
 class Mascara{
@@ -54,29 +53,24 @@ class Mascara{
 	
 class Armadura{
 	
-	var refuerzo = ningunRefuerzo
+	var property refuerzo
     const valorBase
     
-    constructor(unValorBase){
+    constructor(unValorBase,unRefuerzo){
     	
     	valorBase = unValorBase
+    	refuerzo = unRefuerzo
     }
 	
 	method unidadesDeLucha(duenio){
 		
-		return valorBase + refuerzo.unidadesDeLuchaQueAporta(duenio)
+		return self.valorBase() + refuerzo.unidadesDeLuchaQueAporta(duenio)
 	}
 	
-
-	method refuerzo(cual){
-		
-		refuerzo = cual
-}
-	method refuerzo(){
-		
-		return refuerzo
-
-	}
+	method valorBase() = valorBase
+	
+	method precioDeLista() = refuerzo.costoAgregado(self)
+	
 	
 }
 
@@ -95,6 +89,8 @@ object espejoFantastico{
 	    }
 		    
 	}
+	
+	method precioDeLista() = 90
 }
 
 
