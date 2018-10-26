@@ -50,38 +50,42 @@ class CollarDivino inherits Artefacto{
 	method precioDeLista() = 2 * self.cantidadDePerlas()
 }
 
-class Mascara{
+class Mascara inherits Artefacto{
 	
 	const indiceOscuridad
 	var minimo = 4
 	
-	constructor(unIndiceOscuridad){
+	constructor(unIndiceOscuridad,unaFecha,unPeso) = super(unaFecha,unPeso){
 		
 		indiceOscuridad = unIndiceOscuridad
 	}
 	
 	method unidadesDeLucha(duenio){
 		
-		return minimo.max((duenio.fuerzaOscura()/2 )* indiceOscuridad)
+		return minimo.max(self.valorDeLucha())
 	}
+	
+	method valorDeLucha() = (fuerzaOscura.valor()/2 )* indiceOscuridad
 	
 	method cambiarMinimo(unValor){
 		
 		minimo = unValor
 	}
 	
+	override method pesoAgregado() = 0.max(self.valorDeLucha() - 3)
+	
+	method precioDeLista() = 10 * indiceOscuridad
+	
 	
 }
 
 
-
-	
-class Armadura{
+class Armadura inherits Artefacto{
 	
 	var property refuerzo
     const valorBase
     
-    constructor(unValorBase,unRefuerzo){
+    constructor(unValorBase,unRefuerzo,unaFecha,unPeso) = super(unaFecha,unPeso){
     	
     	valorBase = unValorBase
     	refuerzo = unRefuerzo
@@ -96,7 +100,7 @@ class Armadura{
 	
 	method precioDeLista() = refuerzo.costoAgregado(self)
 	
-	
+	override method pesoAgregado() = self.refuerzo().peso()
 }
 
 object espejoFantastico{
