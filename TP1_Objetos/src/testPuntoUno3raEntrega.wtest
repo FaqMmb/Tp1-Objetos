@@ -1,0 +1,31 @@
+import hechizos.*
+import Personaje.*
+
+describe "testsDelPunto1 Hechiceria" {
+     
+    var hechizoComercial
+    var espectroMalefico
+    var furibunda
+    fixture{
+    	
+    	hechizoComercial = new HechizoDeLogo("el hechizo comercial",2,0.2)
+    	espectroMalefico = new HechizoDeLogo("espectro malefico",1,1)
+    	furibunda = new Personaje(100,10) // valores random, no influyen en los tests
+    	furibunda.hechizoPreferido(hechizoComercial)
+    } 
+	test "el nivel de hechiceria de furibunda es 29" {
+
+		assert.equals(29,furibunda.nivelHechiceria())
+
+	}
+	
+	test "el hechizoComercial no es poderoso"{
+		
+		assert.notThat(hechizoComercial.esPoderoso())
+	}
+	
+	test "el espectroMalefico es poderoso"{
+		
+		assert.that(espectroMalefico.esPoderoso())
+	}
+}

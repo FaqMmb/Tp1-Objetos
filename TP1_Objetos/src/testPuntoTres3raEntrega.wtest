@@ -1,0 +1,39 @@
+import Personaje.*
+import artefactos.*
+
+describe "tests del punto 3 de la 3ra entrega" {
+	
+	var navi
+	var ashleyGraham
+	var mascaraClara
+	
+	
+	fixture{
+		
+		mascaraClara = new Mascara(0,new Date(),2)
+		navi = new Npc(100,10,facil)
+		ashleyGraham = new Npc(100,10,moderado)
+		ashleyGraham.valorBase(5)
+		ashleyGraham.artefactos([mascaraClara])
+		
+	}
+
+	test "la habilidad de lucha de navi es 1" {
+
+		assert.equals(1,navi.habilidadParaLaLucha())
+
+	}
+	
+	test "la habilidad de lucha de Ashely Graham es 18"{
+		
+		assert.equals(18,ashleyGraham.habilidadParaLaLucha())
+	}
+	
+	test "cuando a ashleyGraham se le cambia la dificultad a dificil, su habilidad de lucha es 36"{
+		
+		ashleyGraham.cambiarDificultad(dificil)
+		assert.equals(36,ashleyGraham.habilidadParaLaLucha())
+	}
+	
+	
+}

@@ -1,0 +1,75 @@
+import Personaje.*
+import Feria.*
+import artefactos.*
+
+
+describe "tests del punto 4 de la 3ra entrega" {
+	
+	var ursula
+	var pastoriza
+	var prieto
+	var fermepin
+	var mascaraOscura
+	
+	fixture{
+		
+	    mascaraOscura = new Mascara(1,new Date(),3)
+		ursula = new Personaje(100,200)
+		pastoriza = new FeriaDeArmas(new Independiente(0.09))
+		prieto = new FeriaDeArmas(registrado)
+		fermepin = new FeriaDeArmas(impuestoALasGanancias)
+		
+	}
+
+	test "cuando ursula compra la mascaraOscura a Pastoriza, queda con 89.1 monedas" {
+
+		ursula.comprarArtefacto(pastoriza,mascaraOscura)
+		assert.equals(89.1,ursula.monedas())
+
+	}
+	
+	test "cuando ursula compra la mascaraOscura a prieto, queda con 87.9 monedas"{
+		
+		ursula.comprarArtefacto(prieto,mascaraOscura)
+		assert.equals(87.9,ursula.monedas())
+
+	}
+	
+	test "cuando ursula compra la mascaraOscura a fermepin, queda con 88.25 monedas"{
+		
+		ursula.comprarArtefacto(fermepin,mascaraOscura)
+		assert.equals(88.25,ursula.monedas())
+	}
+	
+	test "cuando se recategoriza a pastoriza y ursula le compra la mascaraOscura, ursula queda con 88.2 monedas"{
+		
+		pastoriza.recategorizacionCompulsiva()
+		ursula.comprarArtefacto(pastoriza,mascaraOscura)
+		assert.equals(88.2,ursula.monedas())
+			
+	}
+	
+	test "cuando se recategoriza dos veces a pastoriza y ursula le compra la mascaraOscura, ursula queda con 87.9 monedas"{
+		
+		pastoriza.recategorizacionCompulsiva()
+		pastoriza.recategorizacionCompulsiva()
+		ursula.comprarArtefacto(pastoriza,mascaraOscura)
+		assert.equals(87.9,ursula.monedas())
+		
+	}
+	
+	test "cuando se recategoriza a prieto y ursula le compra la mascaraOscura, ursula queda con 88.25 monedas"{
+		
+		prieto.recategorizacionCompulsiva()
+		ursula.comprarArtefacto(prieto,mascaraOscura)
+		assert.equals(88.25,ursula.monedas())
+	}
+	
+	test "cuando se recategoriza a fermepin y ursula le compra la mascaraOscura, ursula queda con 88.25 monedas"{
+		
+		fermepin.recategorizacionCompulsiva()
+		ursula.comprarArtefacto(fermepin,mascaraOscura)
+		assert.equals(88.25,ursula.monedas()) 	
+		
+	}
+}
