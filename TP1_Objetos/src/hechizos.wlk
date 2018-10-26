@@ -6,6 +6,25 @@ class Hechizo{
 	
 	method precioDeLista()
 	
+		method esPoderoso() = self.poder() >= 15
+	
+	method poder()
+	
+	method peso() { // es el mensaje que manda armadura a su refuerzo
+		
+		if(self.miPoderEsPar()){
+			
+			return 2
+		}
+		else
+		{
+			
+			return 1
+		}
+	}
+	
+	method miPoderEsPar() = self.poder().even()
+	
 }
 
 
@@ -13,19 +32,15 @@ class HechizoDeLogo inherits Hechizo {
 
 	var nombre
 	const multiplicador
+	var property porcentajeNombre
 
-	constructor(unNombre, unMultiplicador) {
+	constructor(unNombre, unMultiplicador,unPorcentajeNombre) {
 		nombre = unNombre
 		multiplicador = unMultiplicador
+		porcentajeNombre = unPorcentajeNombre
 	}
 
-	method poder() {
-		return nombre.size() * multiplicador
-	}
-
-	method esPoderoso() {
-		return self.poder() > 15
-	}
+	override method poder() = self.longitudNombre()* self.porcentajeNombre() * multiplicador
 
 	method cambiarNombre(unNombre) {
 		nombre = unNombre
@@ -34,6 +49,8 @@ class HechizoDeLogo inherits Hechizo {
 	method unidadesDeLuchaQueAporta(duenio) {
 		return self.poder()
 	}
+	
+	method longitudNombre() = nombre.size()
 	
 	override method precioDeLista() = self.poder()
 
@@ -46,10 +63,6 @@ object hechizoBasico inherits Hechizo {
 
 	method poder() {
 		return poder
-	}
-
-	method esPoderoso() {
-		return false
 	}
 
 	method unidadesDeLuchaQueAporta(duenio) {
