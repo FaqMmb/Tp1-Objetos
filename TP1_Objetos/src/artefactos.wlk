@@ -1,7 +1,32 @@
 import refuerzos.*
 import Personaje.*
 
-class Arma{
+class Artefacto{
+	
+	const fechaCompra
+	const peso
+	
+	constructor(unaFecha,unPeso){
+		
+		fechaCompra = unaFecha
+		peso = unPeso
+	}
+	
+	method factorDeCorreccion() = (self.diasDesdeLaCompra()/1000).min(1)
+	
+	method pesoTotal() = self.peso() - self.factorDeCorreccion() + self.pesoAgregado()
+	
+	method diasDesdeLaCompra() = new Date() - self.fechaCompra()
+	
+	method fechaCompra() = fechaCompra
+	
+	method peso() = peso
+	
+	method pesoAgregado()
+	
+}
+
+class Arma inherits Artefacto {
 	
 	const poder = 3
 	
@@ -13,7 +38,7 @@ class Arma{
 }
 
 
-object collarDivino{
+class CollarDivino inherits Artefacto{
 	
 	var property cantidadDePerlas = 5
 	
