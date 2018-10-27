@@ -2,6 +2,7 @@ import Personaje.*
 import artefactos.*
 import refuerzos.*
 import hechizos.*
+import Feria.*
 
 
 describe "group of tests" {
@@ -10,20 +11,24 @@ describe "group of tests" {
 	var thor
 	var loki 
 	var alacachulaHechizo
+	var collarDivino
+	var mockHnos
 	
 	fixture{
 		
-		alacachulaHechizo = new HechizoDeLogo("alacachula cachicomula",1)
+		alacachulaHechizo = new HechizoDeLogo("alacachula cachicomula",1,1)
+		collarDivino = new CollarDivino(new Date(),0)
 		
-		xenia = new Personaje()
+		xenia = new Personaje(100,200)
 		xenia.hechizoPreferido(alacachulaHechizo)
 		
-		thor = new Personaje()
+		thor = new Personaje(100,200)
 		thor.hechizoPreferido(hechizoBasico)
 		
-		loki = new Personaje()
+		loki = new Personaje(5,200)
 		loki.hechizoPreferido(hechizoBasico)
-		loki.monedas(5)
+		
+		mockHnos = new FeriaDeArmas(noTieneComision)
 		
 		
 	}
@@ -61,20 +66,20 @@ describe "group of tests" {
 	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), a xenia le deben quedar 70,5 monedas "{
 		
 		
-		xenia.comprarArtefacto(new Arma())
+		xenia.comprarArtefacto(new Arma(new Date(),0))
 		xenia.comprarArtefacto(collarDivino)
-		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo))
-		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5)))
+		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo,new Date(),0))
+		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5),new Date(),0))
 		assert.equals(70.5,xenia.monedas())
 		
 	}
 	
 	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), xenia tiene 4 artefactos " {
 		
-		xenia.comprarArtefacto(new Arma())
+		xenia.comprarArtefacto(new Arma(new Date(),0))
 		xenia.comprarArtefacto(collarDivino)
-		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo))
-		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5)))
+		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo,new Date(),0))
+		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5),new Date(),0))
 		assert.equals(4,xenia.cantidadDeArtefactos())
 		
 		
@@ -82,8 +87,8 @@ describe "group of tests" {
 	
 	test "cuando thor compra una armadura con bendicion como refuerzo, y una armadura reforzada con el hechizo alacachula, a thor le quedan 74 monedas"{
 		
-		thor.comprarArtefacto(new Armadura(2,bendicion))
-		thor.comprarArtefacto(new Armadura(2,alacachulaHechizo))
+		thor.comprarArtefacto(new Armadura(2,bendicion,new Date(),0))
+		thor.comprarArtefacto(new Armadura(2,alacachulaHechizo,new Date(),0))
 		assert.equals(74,thor.monedas())
 	}
 	

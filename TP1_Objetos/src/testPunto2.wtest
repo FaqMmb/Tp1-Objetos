@@ -8,13 +8,15 @@ describe "tests referidos al punto 2" {
 	var espectroMalefico
 	var espadaDelDestino
 	var mascaraOscura
+	var collarDivino
 	
 		fixture{
 			
-		rolando = new Personaje()
-		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
-		espadaDelDestino = new Arma()
-		mascaraOscura = new Mascara(1)
+	    rolando = new Personaje(100,200)
+		collarDivino = new CollarDivino(new Date(),0)
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1,1)
+		espadaDelDestino = new Arma(new Date(),0)
+		mascaraOscura = new Mascara(1,new Date(),0)
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		rolando.agregarArtefacto(espadaDelDestino)
@@ -67,14 +69,14 @@ describe "tests referidos al punto 2" {
 	
 	test "cuando se tiene unaMascara con indiceDeOscurida de 0, las unidadesDeLucha que aporta es 4	"{
 		
-		var unaMascaraOscura = new Mascara(0)
+		var unaMascaraOscura = new Mascara(0,new Date(),0)
 		
 		assert.equals(4,unaMascaraOscura.unidadesDeLucha(rolando))
 	}
 	
 	test "cuando se tiene unaMascara con indiceDeOscuridad de 0, y se cambia el minimo a 2, las unidadesDeLucha que aporta es 2" {
 		
-		var otraMascaraOscura = new Mascara(0)
+		var otraMascaraOscura = new Mascara(0,new Date(),0)
 		otraMascaraOscura.cambiarMinimo(2)
 		assert.equals(2,otraMascaraOscura.unidadesDeLucha(rolando))
 		

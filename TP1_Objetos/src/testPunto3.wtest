@@ -10,15 +10,17 @@ describe "tests del punto 3)" {
 	var espadaDelDestino
 	var mascaraOscura
 	var unaArmadura
+	var collarDivino
 	
 		fixture {
-		rolando = new Personaje()
-		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
-		espadaDelDestino = new Arma()
-		mascaraOscura = new Mascara(1)
-		unaArmadura = new Armadura(2,ningunRefuerzo)	
+		rolando = new Personaje(100,200)
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1,1)
+		espadaDelDestino = new Arma(new Date(),0)
+		mascaraOscura = new Mascara(1,new Date(),0)
+		unaArmadura = new Armadura(2,ningunRefuerzo, new Date(),0)	
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
+		collarDivino = new CollarDivino(new Date(), 0)
 		rolando.artefactos([espadaDelDestino,collarDivino,mascaraOscura,unaArmadura,espejoFantastico])
 		collarDivino.cantidadDePerlas(5)
 	}

@@ -7,8 +7,8 @@ describe "se van a realizar los tests referidos al punto 1" {
 	var espectroMalefico
 		
 		fixture{
-		rolando = new Personaje()	
-		espectroMalefico = new HechizoDeLogo("espectroMalefico",1)
+		rolando = new Personaje(100,200)	
+		espectroMalefico = new HechizoDeLogo("espectroMalefico",1,1)
 		rolando.cambiarHechizoPreferido(espectroMalefico)
 		espectroMalefico.cambiarNombre("espectro malefico")
 		
