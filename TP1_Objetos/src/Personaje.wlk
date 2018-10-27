@@ -4,7 +4,6 @@ import Feria.*
 
 class Personaje {
 
-	var fuerzaOscura = 5
 	var property hechizoPreferido
 	var property artefactos = []
 	var valorBase = 1
@@ -21,13 +20,11 @@ class Personaje {
 	method nivelHechiceria() {
 		return (3 * hechizoPreferido.poder()) + fuerzaOscura
 	}
+	
+	method fuerzaOscura() = fuerzaOscura.valor()
 
 	method cambiarHechizoPreferido(unHechizo) {
 		hechizoPreferido = unHechizo
-	}
-
-	method recibirUnEclipse() {
-		self.fuerzaOscura(self.fuerzaOscura() * 2)
 	}
 
 	method seCreePoderoso() {
@@ -68,14 +65,6 @@ class Personaje {
 
 	method artefactosSinEspejo() {
 		return artefactos.filter({ unArtefacto => !unArtefacto.equals(espejoFantastico) })
-	}
-
-	method fuerzaOscura() {
-		return fuerzaOscura
-	}
-
-	method fuerzaOscura(unValor) {
-		fuerzaOscura = unValor
 	}
 
 	method valorBase(unValor) {
@@ -129,8 +118,8 @@ class Personaje {
 
 object eclipse {
 
-	method hacerUnEclipse(duenio) {
-		duenio.recibirUnEclipse()
+	method hacerUnEclipse() {
+		fuerzaOscura.valor(fuerzaOscura.valor()*2)
 	}
 
 }

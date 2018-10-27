@@ -66,20 +66,20 @@ describe "group of tests" {
 	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), a xenia le deben quedar 70,5 monedas "{
 		
 		
-		xenia.comprarArtefacto(new Arma(new Date(),0))
-		xenia.comprarArtefacto(collarDivino)
-		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo,new Date(),0))
-		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5),new Date(),0))
+		xenia.comprarArtefacto(mockHnos,new Arma(new Date(),0))
+		xenia.comprarArtefacto(mockHnos,collarDivino)
+		xenia.comprarArtefacto(mockHnos,new Armadura(2,ningunRefuerzo,new Date(),0))
+		xenia.comprarArtefacto(mockHnos,new Armadura(2,new CotaDeMalla(5),new Date(),0))
 		assert.equals(70.5,xenia.monedas())
 		
 	}
 	
 	test "cuando xenia compra una espada, un collarDivino, una armaduraSinRefuerza y otra armadura con cotaDeMalla(nivelDeLucha 5), xenia tiene 4 artefactos " {
 		
-		xenia.comprarArtefacto(new Arma(new Date(),0))
-		xenia.comprarArtefacto(collarDivino)
-		xenia.comprarArtefacto(new Armadura(2,ningunRefuerzo,new Date(),0))
-		xenia.comprarArtefacto(new Armadura(2,new CotaDeMalla(5),new Date(),0))
+		xenia.comprarArtefacto(mockHnos,new Arma(new Date(),0))
+		xenia.comprarArtefacto(mockHnos,collarDivino)
+		xenia.comprarArtefacto(mockHnos,new Armadura(2,ningunRefuerzo,new Date(),0))
+		xenia.comprarArtefacto(mockHnos,new Armadura(2,new CotaDeMalla(5),new Date(),0))
 		assert.equals(4,xenia.cantidadDeArtefactos())
 		
 		
@@ -87,8 +87,8 @@ describe "group of tests" {
 	
 	test "cuando thor compra una armadura con bendicion como refuerzo, y una armadura reforzada con el hechizo alacachula, a thor le quedan 74 monedas"{
 		
-		thor.comprarArtefacto(new Armadura(2,bendicion,new Date(),0))
-		thor.comprarArtefacto(new Armadura(2,alacachulaHechizo,new Date(),0))
+		thor.comprarArtefacto(mockHnos,new Armadura(2,bendicion,new Date(),0))
+		thor.comprarArtefacto(mockHnos,new Armadura(2,alacachulaHechizo,new Date(),0))
 		assert.equals(74,thor.monedas())
 	}
 	
