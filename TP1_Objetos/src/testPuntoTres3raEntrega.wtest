@@ -1,5 +1,6 @@
 import Personaje.*
 import artefactos.*
+import Npc.*
 
 describe "tests del punto 3 de la 3ra entrega" {
 	

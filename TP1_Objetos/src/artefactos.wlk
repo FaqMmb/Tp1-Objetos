@@ -50,6 +50,8 @@ class CollarDivino inherits Artefacto{
 	}
 	
 	method precioDeLista() = 2 * self.cantidadDePerlas()
+	
+	override method pesoAgregado() = 0.5*cantidadDePerlas
 }
 
 class Mascara inherits Artefacto{
