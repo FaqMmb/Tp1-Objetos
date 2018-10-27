@@ -61,7 +61,7 @@ object hechizoBasico inherits Hechizo {
 
 	var poder = 10
 
-	method poder() {
+	override method poder() {
 		return poder
 	}
 
@@ -84,7 +84,7 @@ class LibroDeHechizos inherits Hechizo {
 	
 	method hechizos() = hechizos
 
-	method poder() {
+	override method poder() {
 		return self.hechizosPoderosos().sum({ unHechizo => unHechizo.poder() })
 	}
 
