@@ -112,7 +112,7 @@ class Personaje {
 	}
 
 	method canjearHechizo(unHechizo) {
-		feriaDeHechizos.realizarTransaccion(self, unHechizo)
+		new FeriaDeHechizos(noTieneComision).realizarTransaccion(self, unHechizo)
 	}
 
 	method comprarArtefacto(aQuienComprar,unArtefacto) {
