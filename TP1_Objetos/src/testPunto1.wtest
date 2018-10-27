@@ -35,7 +35,7 @@ describe "se van a realizar los tests referidos al punto 1" {
 	
 	test "cuando ocurre un eclipse, el nivelHechiceria de rolando es 61 "{
 		
-		eclipse.hacerUnEclipse(rolando)
+		eclipse.hacerUnEclipse()
 		assert.equals(61,rolando.nivelHechiceria())
 	}
 	

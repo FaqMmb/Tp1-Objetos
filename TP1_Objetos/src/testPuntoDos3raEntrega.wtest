@@ -69,7 +69,7 @@ describe "tests del punto 2" {
 	
 	test "luego de que ocurre un eclipse, el peso de la mascaraOscura es 5kg"{
 		
-		eclipse.hacerUnEclipse(ursula)
+		eclipse.hacerUnEclipse()
 		assert.equals(5,unaMascaraOscura.unidadesDeLucha(ursula))//ursula es la duenia de la mascaraOscura
 	}
 	
