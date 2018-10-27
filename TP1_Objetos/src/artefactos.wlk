@@ -35,6 +35,8 @@ class Arma inherits Artefacto {
 	method unidadesDeLucha(duenio) = self.poder()
 	
 	method precioDeLista() = 5 * self.poder()
+	
+	override method pesoAgregado() = 0
 }
 
 
@@ -122,7 +124,10 @@ object espejoFantastico{
 	method precioDeLista() = 90
 }
 
-
+object fuerzaOscura{
+	
+	var property valor = 5
+}
 
 
 
