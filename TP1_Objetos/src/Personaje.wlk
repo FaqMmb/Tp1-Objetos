@@ -100,10 +100,6 @@ class Personaje {
 		self.hechizoPreferido(unHechizo)
 	}
 
-	method canjearHechizo(unHechizo) {
-		new FeriaDeHechizos(noTieneComision).realizarTransaccion(self, unHechizo)
-	}
-
 	method comprarArtefacto(aQuienComprar,unArtefacto) {
 		aQuienComprar.realizarTransaccion(self, unArtefacto)
 	}
