@@ -30,13 +30,14 @@ class Feria{ //presupongo que tanto para saber si puede canjear hechizo o compra
              
              method cobrar(alguien,unProducto){
              	
-             	var cuantoPagar = self.calculoVenta(alguien,unProducto) + impuesto.aplicarImpuesto(unProducto)
-             	
-             	alguien.pagar(cuantoPagar)
+             	alguien.pagar(self.calculoVenta(alguien,unProducto) + impuesto.aplicarImpuesto(unProducto))
              }
-             method otorgarObjeto(alguien,unProducto)
+             method otorgarObjeto(alguien,unProducto){
+             	
+             	unProducto.serOtorgadoA(alguien)
+             }
              
-             method calculoVenta(alguien,unProducto)
+             method calculoVenta(alguien,unProducto)  = unProducto.cuantoCuesta(alguien)
              
              method recategorizacionCompulsiva() = impuesto.recategorizacion(self)
              
@@ -44,27 +45,6 @@ class Feria{ //presupongo que tanto para saber si puede canjear hechizo o compra
              	
              	impuesto = unImpuesto
              }
-	
-}
-
-class FeriaDeHechizos inherits Feria{
-	
-	override method calculoVenta(alguien,unHechizo) = 0.max(unHechizo.precioDeLista() - (alguien.precioDeSuHechizoPreferido()/2))
-	
-	override method otorgarObjeto(alguien,hechizo){
-		
-		alguien.recibirHechizo(hechizo)
-	}
-
-}
-
-class FeriaDeArmas inherits Feria{
-	
-	override method calculoVenta(alguien,unArtefacto) = unArtefacto.precioDeLista()
-	override method otorgarObjeto(alguien,unArtefacto){
-		
-		alguien.recibirArtefacto(unArtefacto)
-	}
 	
 }
 
