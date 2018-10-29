@@ -10,33 +10,33 @@ class Feria{ //presupongo que tanto para saber si puede canjear hechizo o compra
              	impuesto = unImpuesto
              }
              
-             method hacerTransaccion(alguien, artefactoOHechizo) {
+             method hacerTransaccion(alguien, unProducto) {
 		
-		if (!alguien.puedeRealizarTransaccion(artefactoOHechizo)) {
+		if (!alguien.puedeRealizarTransaccion(unProducto)) {
 			
 			error.throwWithMessage("No puede realizar la transaccion")
 		} 
 		else {
 			
-			self.realizarTransaccion(alguien, artefactoOHechizo)
+			self.realizarTransaccion(alguien, unProducto)
 		}
 	}
              
-             method realizarTransaccion(alguien,artefactoOHechizo){
+             method realizarTransaccion(alguien,unProducto){
              	
-             	self.cobrar(alguien,artefactoOHechizo)
-             	self.otorgarObjeto(alguien,artefactoOHechizo)
+             	self.cobrar(alguien,unProducto)
+             	self.otorgarObjeto(alguien,unProducto)
              }
              
-             method cobrar(alguien,artefactoOHechizo){
+             method cobrar(alguien,unProducto){
              	
-             	var cuantoPagar = self.calculoVenta(alguien,artefactoOHechizo) + impuesto.aplicarImpuesto(artefactoOHechizo)
+             	var cuantoPagar = self.calculoVenta(alguien,unProducto) + impuesto.aplicarImpuesto(unProducto)
              	
              	alguien.pagar(cuantoPagar)
              }
-             method otorgarObjeto(alguien,artefactoOHechizo)
+             method otorgarObjeto(alguien,unProducto)
              
-             method calculoVenta(alguien,artefactoOHechizo)
+             method calculoVenta(alguien,unProducto)
              
              method recategorizacionCompulsiva() = impuesto.recategorizacion(self)
              
