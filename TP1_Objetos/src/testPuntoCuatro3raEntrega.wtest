@@ -15,9 +15,9 @@ describe "tests del punto 4 de la 3ra entrega" {
 		
 	    mascaraOscura = new Mascara(1,new Date(),3)
 		ursula = new Personaje(100,200)
-		pastoriza = new FeriaDeArmas(new Independiente(0.09))
-		prieto = new FeriaDeArmas(registrado)
-		fermepin = new FeriaDeArmas(impuestoALasGanancias)
+		pastoriza = new Feria(new Independiente(0.09))
+		prieto = new Feria(registrado)
+		fermepin = new Feria(impuestoALasGanancias)
 		
 	}
 

@@ -25,14 +25,14 @@ class Feria{ //presupongo que tanto para saber si puede canjear hechizo o compra
              method realizarTransaccion(alguien,unProducto){
              	
              	self.cobrar(alguien,unProducto)
-             	self.otorgarObjeto(alguien,unProducto)
+             	self.otorgarProducto(alguien,unProducto)
              }
              
              method cobrar(alguien,unProducto){
              	
              	alguien.pagar(self.calculoVenta(alguien,unProducto) + impuesto.aplicarImpuesto(unProducto))
              }
-             method otorgarObjeto(alguien,unProducto){
+             method otorgarProducto(alguien,unProducto){
              	
              	unProducto.serOtorgadoA(alguien)
              }

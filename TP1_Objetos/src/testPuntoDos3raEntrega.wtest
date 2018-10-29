@@ -36,7 +36,7 @@ describe "tests del punto 2" {
 		armaduraHechizoPar = new Armadura(1,hechizoComercial,new Date(),12)
 		armaduraHechizoImpar = new Armadura(1,espectroMalefico,new Date(),12)
 		armaduraSinRefuerzo = new Armadura(1,ningunRefuerzo,new Date(),12)
-		mockHnos = new FeriaDeArmas(noTieneComision)
+		mockHnos = new Feria(noTieneComision)
 		merlin = new Personaje(100,10)//(monedas,pesoMaximo)
 		ursula = new Personaje(100,200)
 		ursula.artefactos([unaMascaraOscura,unaArmaduraConCotaDeMalla])

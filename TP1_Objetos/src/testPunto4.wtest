@@ -28,7 +28,7 @@ describe "group of tests" {
 		loki = new Personaje(5,200)
 		loki.hechizoPreferido(hechizoBasico)
 		
-		mockHnos = new FeriaDeArmas(noTieneComision)
+		mockHnos = new Feria(noTieneComision)
 		
 		
 	}

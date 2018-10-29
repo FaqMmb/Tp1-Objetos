@@ -24,6 +24,15 @@ class Artefacto{
 	
 	method pesoAgregado()
 	
+	method calculoVenta(alguien) = self.precioDeLista()
+	
+	method precioDeLista()
+	
+	method otorgarProducto(alguien){
+		
+		alguien.agregarArtefacto(self) 
+		
+	}
 }
 
 class Arma inherits Artefacto {
@@ -34,7 +43,7 @@ class Arma inherits Artefacto {
 	
 	method unidadesDeLucha(duenio) = self.poder()
 	
-	method precioDeLista() = 5 * self.poder()
+	override method precioDeLista() = 5 * self.poder()
 	
 	override method pesoAgregado() = 0
 }
@@ -49,7 +58,7 @@ class CollarDivino inherits Artefacto{
 		return self.cantidadDePerlas()
 	}
 	
-	method precioDeLista() = 2 * self.cantidadDePerlas()
+	override method precioDeLista() = 2 * self.cantidadDePerlas()
 	
 	override method pesoAgregado() = 0.5*cantidadDePerlas
 }
@@ -78,7 +87,7 @@ class Mascara inherits Artefacto{
 	
 	override method pesoAgregado() = 0.max(self.valorDeLucha() - 3)
 	
-	method precioDeLista() = 10 * indiceOscuridad
+	override method precioDeLista() = 10 * indiceOscuridad
 	
 	
 }
@@ -102,7 +111,7 @@ class Armadura inherits Artefacto{
 	
 	method valorBase() = valorBase
 	
-	method precioDeLista() = refuerzo.costoAgregado(self)
+	override method precioDeLista() = refuerzo.costoAgregado(self)
 	
 	override method pesoAgregado() = self.refuerzo().peso()
 }
