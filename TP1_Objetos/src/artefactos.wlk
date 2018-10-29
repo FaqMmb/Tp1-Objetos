@@ -24,11 +24,11 @@ class Artefacto{
 	
 	method pesoAgregado()
 	
-	method calculoVenta(alguien) = self.precioDeLista()
+	method cuantoCuesta(alguien) = self.precioDeLista()
 	
 	method precioDeLista()
 	
-	method otorgarProducto(alguien){
+	method serOtorgadoA(alguien){
 		
 		alguien.agregarArtefacto(self) 
 		

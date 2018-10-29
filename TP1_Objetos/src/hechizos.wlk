@@ -25,9 +25,9 @@ class Hechizo{
 	
 	method miPoderEsPar() = self.poder().even()
 	
-	method calculoVenta(alguien) = 0.max(self.precioDeLista() - (alguien.precioDeSuHechizoPreferido()/2))
+	method cuantoCuesta(alguien) = 0.max(self.precioDeLista() - (alguien.precioDeSuHechizoPreferido()/2))
 	
-	method otorgarProducto(alguien){
+	method serOtorgado(alguien){
 		
 		alguien.hechizoPreferido(self)
 	}

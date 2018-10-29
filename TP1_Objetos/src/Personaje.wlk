@@ -84,9 +84,9 @@ class Personaje {
 		return self.puedePagarlo(unArtefactoOHechizo) and self.puedeCargarlo(unArtefactoOHechizo)
 	}
 
-	method puedePagarlo(unArtefactoOHechizo) = (self.monedas() - unArtefactoOHechizo.precioDeLista() ) >= 0
+	method puedePagarlo(unArtefactoOHechizo) = (self.monedas() - unArtefactoOHechizo.cuantoCuesta(self) ) >= 0
 
-	method puedeCargarlo(unArtefactoOHechizo) = self.cargaQueLleva() + unArtefactoOHechizo.pesoTotal() <= cargaMaxima
+	method puedeCargarlo(unArtefactoOHechizo) = (self.cargaQueLleva() + unArtefactoOHechizo.pesoTotal()) <= cargaMaxima
 
 	method cargaQueLleva() = self.artefactos().sum{ unArtefacto => unArtefacto.pesoTotal() }
 
