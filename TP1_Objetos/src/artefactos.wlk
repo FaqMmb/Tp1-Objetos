@@ -133,6 +133,8 @@ object espejoFantastico{
 	}
 	
 	method precioDeLista() = 90
+	
+	method cuantoCuesta(alguien) = self.precioDeLista()
 }
 
 object fuerzaOscura{

@@ -27,7 +27,7 @@ class Hechizo{
 	
 	method cuantoCuesta(alguien) = 0.max(self.precioDeLista() - (alguien.precioDeSuHechizoPreferido()/2))
 	
-	method serOtorgado(alguien){
+	method serOtorgadoA(alguien){
 		
 		alguien.hechizoPreferido(self)
 	}

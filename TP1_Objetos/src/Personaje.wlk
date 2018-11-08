@@ -18,7 +18,7 @@ class Personaje {
 	method cargaMaxima() = cargaMaxima
 
 	method nivelHechiceria() {
-		return (3 * hechizoPreferido.poder()) + fuerzaOscura
+		return (3 * hechizoPreferido.poder()) + fuerzaOscura.valor()
 	}
 	
 	method fuerzaOscura() = fuerzaOscura.valor()

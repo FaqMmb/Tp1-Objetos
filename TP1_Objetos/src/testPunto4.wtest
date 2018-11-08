@@ -41,20 +41,20 @@ describe "group of tests" {
 	
 	test "cuando xenia canjea su hechizo por un hechizoBasico, se queda con las mismas monedas que tenia, es decir, con 100"{
 		
-		xenia.canjearHechizo(hechizoBasico)
+		xenia.comprarArtefacto(mockHnos,hechizoBasico)
 		assert.equals(100,xenia.monedas())
 	}
 	
 	test "cuando thor canjea su hechizo por el de alacachula, le quedan 83 monedas"{
 		
-		thor.canjearHechizo(alacachulaHechizo)
+		thor.comprarArtefacto(mockHnos,alacachulaHechizo)
 		assert.equals(83,thor.monedas())
 	}
 	
 	test "cuando thor canjea dos veces su hechizo por el hechizoBasico, le quedan 90 monedas"{
 		
-		thor.canjearHechizo(hechizoBasico)
-		thor.canjearHechizo(hechizoBasico)
+		thor.comprarArtefacto(mockHnos,hechizoBasico)
+		thor.comprarArtefacto(mockHnos,hechizoBasico)
 		assert.equals(90,thor.monedas())
 	}
 	
@@ -99,7 +99,7 @@ describe "group of tests" {
 	
 	test "cuando xenia canjea su hechizo por un libroDeHechizos que contiene el hechizo alacachula y el hechizoBasico, le quedan 69 monedas"{
 		
-		xenia.canjearHechizo(new LibroDeHechizos([alacachulaHechizo,hechizoBasico]))
+		xenia.comprarArtefacto(mockHnos,new LibroDeHechizos([alacachulaHechizo,hechizoBasico]))
 		assert.equals(69,xenia.monedas())
 	}
 }
