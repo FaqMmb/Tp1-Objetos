@@ -1,8 +1,4 @@
-class Feria{ //presupongo que tanto para saber si puede canjear hechizo o comprar un artefacto
-             //solamente basta con que las monedas que tiene el personaje sean mas que lo que
-             //sea que salga el hechizo o el artefacto ( esto viene a que se le descuenta la 
-             //mitad de lo que sale su hechizoFavorito.)
-             
+class Feria{  
              var impuesto
              
              constructor(unImpuesto){
